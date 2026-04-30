@@ -1,0 +1,60 @@
+services:
+  # ─── PostgreSQL ───────────────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: albonnet
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: albonnet
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U albonnet"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - internal
+
+  # ─── Next.js App ──────────────────────────────────────────
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
+      NEXTAUTH_URL: ${NEXTAUTH_URL}
+      ADMIN_EMAIL: ${ADMIN_EMAIL}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+      RESEND_API_KEY: ${RESEND_API_KEY}
+      CONTACT_EMAIL: ${CONTACT_EMAIL}
+      RESEND_DOMAIN: ${RESEND_DOMAIN}
+      NTFY_URL: ${NTFY_URL}
+      NTFY_TOPIC: ${NTFY_TOPIC}
+      NTFY_TOKEN: ${NTFY_TOKEN}
+    volumes:
+      - uploads_data:/app/public/uploads
+    networks:
+      - internal
+      - web
+
+networks:
+  internal:
+  web:
+    external: true
+
+volumes:
+  postgres_data:
+    driver: local
+  uploads_data:
+    driver: local

@@ -1,0 +1,81 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Admin Auth ──────────────────────────────────────────────
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ─── Site Content ────────────────────────────────────────────
+
+model SiteSettings {
+  id             String @id @default("main")
+  brandName      String @default("Albonnet")
+  email          String @default("contact@albonnet.fr")
+  location       String @default("Paris, France")
+  footerText     String @default("© 2026 Alexis Bonnet - Développeur Web Freelance")
+  socialGithub   String @default("")
+  socialLinkedin String @default("")
+  socialTwitter  String @default("")
+  updatedAt      DateTime @updatedAt
+}
+
+model HeroContent {
+  id          String @id @default("main")
+  badge       String @default("Développeur Web Freelance")
+  title       String @default("Je conçois des expériences web qui marquent.")
+  description String @default("Applications performantes, interfaces soignées et code robuste.")
+  updatedAt   DateTime @updatedAt
+}
+
+model HeroStat {
+  id       String @id @default(cuid())
+  number   String
+  label    String
+  position Int    @default(0)
+}
+
+model Service {
+  id          String @id @default(cuid())
+  title       String
+  description String
+  icon        String @default("layers")
+  position    Int    @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  color       String   @default("#333366")
+  imageUrl    String   @default("")
+  url         String   @default("")
+  tags        String[] @default([])
+  position    Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ExpertiseGroup {
+  id          String   @id @default(cuid())
+  label       String
+  description String
+  items       String[] @default([])
+  position    Int      @default(0)
+}

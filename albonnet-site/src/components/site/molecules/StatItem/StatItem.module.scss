@@ -1,0 +1,11 @@
+.item {
+  text-align: center;
+}
+
+.number {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--color-accent);
+  line-height: 1;
+}

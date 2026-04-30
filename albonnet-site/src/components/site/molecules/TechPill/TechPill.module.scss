@@ -1,0 +1,18 @@
+/* --hue is injected as inline CSS custom property from the component */
+.pill {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: var(--radius-full);
+  background: hsl(var(--hue), 50%, 95%);
+  color: hsl(var(--hue), 50%, 35%);
+  transition: all 0.3s ease;
+  cursor: default;
+  display: inline-block;
+
+  &:hover {
+    background: hsl(var(--hue), 65%, 48%);
+    color: #fff;
+  }
+}

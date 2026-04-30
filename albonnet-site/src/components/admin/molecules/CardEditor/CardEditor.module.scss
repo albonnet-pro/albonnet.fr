@@ -1,0 +1,27 @@
+.card {
+  background: var(--admin-surface);
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: border-color 0.25s;
+  position: relative;
+
+  &:hover {
+    border-color: var(--admin-border-light);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--admin-text);
+  font-family: var(--font-body);
+}

@@ -1,0 +1,113 @@
+.section {
+  padding: clamp(80px, 12vw, 140px) 0;
+  background: var(--color-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  right: -5%;
+  bottom: -20%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232, 80, 58, 0.125) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+  gap: 64px;
+  align-items: start;
+}
+
+.accentMark {
+  color: var(--color-accent);
+}
+
+.contactItems {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.contactIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: rgba(232, 80, 58, 0.094);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.formCard {
+  background: var(--color-dark-glass);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg);
+  padding: clamp(28px, 4vw, 44px);
+}
+
+.successState {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(232, 80, 58, 0.125);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: var(--color-accent);
+  font-size: 1.8rem;
+}
+
+.contactBadge {
+  margin-bottom: 16px;
+  display: inline-block;
+  background: rgba(232, 80, 58, 0.145);
+}
+
+.sectionHeading {
+  color: var(--color-paper);
+  margin-bottom: 20px;
+}
+
+.sectionIntro {
+  margin-bottom: 40px;
+}
+
+.darkInput {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-paper);
+}
+
+.errorMsg {
+  color: #f87171;
+  font-size: 0.85rem;
+  margin: 0 0 12px;
+  text-align: center;
+}

@@ -1,0 +1,44 @@
+{
+  "name": "albonnet-site",
+  "version": "1.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "db:seed": "npx tsx prisma/seed.ts",
+    "db:studio": "prisma studio",
+    "docker:build": "docker build -t albonnet-site .",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "@fortawesome/react-fontawesome": "^3.3.0",
+    "@prisma/client": "^5.17.0",
+    "bcryptjs": "^2.4.3",
+    "next": "^16.2.4",
+    "next-auth": "^4.24.14",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "resend": "^6.1.3",
+    "zod": "^4.3.6"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.mjs"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "prisma": "^5.17.0",
+    "sass": "^1.99.0",
+    "typescript": "^5.5.0"
+  }
+}

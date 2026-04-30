@@ -1,0 +1,5 @@
+/* opacity, transform, transitionDelay are driven by props (inline style) */
+.wrapper {
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}

@@ -1,0 +1,35 @@
+.section {
+  padding: clamp(80px, 12vw, 140px) 0;
+  background: #fff;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 32px;
+}
+
+.accentDot {
+  color: var(--color-accent);
+}
+
+.sectionBadge {
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.sectionHeading {
+  margin-bottom: 16px;
+}
+
+.sectionIntro {
+  max-width: 520px;
+  margin-bottom: 56px;
+}

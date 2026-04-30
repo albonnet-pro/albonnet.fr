@@ -1,0 +1,17 @@
+.root {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-paper);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  color: var(--color-muted);
+  background: var(--color-paper);
+}

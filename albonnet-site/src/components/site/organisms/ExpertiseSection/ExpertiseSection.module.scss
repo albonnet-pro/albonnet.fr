@@ -1,0 +1,50 @@
+.section {
+  padding: clamp(80px, 12vw, 140px) 0;
+  background: var(--color-paper);
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+  position: relative;
+  z-index: 1;
+}
+
+.accentDot {
+  color: var(--color-accent);
+}
+
+.pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sectionBadge {
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.sectionHeading {
+  margin-bottom: 16px;
+}
+
+.sectionIntro {
+  max-width: 580px;
+  margin-bottom: 56px;
+}
+
+.expertiseGroup {
+  margin-bottom: 40px;
+}
+
+.groupLabel {
+  margin-bottom: 6px;
+}
+
+.groupDesc {
+  margin-bottom: 14px;
+  max-width: 500px;
+}

@@ -1,0 +1,126 @@
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-paper);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 140px clamp(20px, 4vw, 48px) 80px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Accent color only */
+.accent {
+  color: var(--color-accent);
+}
+
+/* Accent color + wavy underline (position: relative needed for absolute SVG child) */
+.accentText {
+  color: var(--color-accent);
+  position: relative;
+}
+
+.underlineSvg {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+}
+
+.ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.stats {
+  display: flex;
+  gap: clamp(32px, 5vw, 64px);
+  margin-top: 72px;
+  padding-top: 36px;
+  border-top: 1px solid var(--color-subtle);
+}
+
+/* Carousel mobile - masqué sur desktop */
+.statsCarousel {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .stats {
+    display: none;
+  }
+
+  .statsCarousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--color-subtle);
+  }
+
+  .statSlide {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .statFadeIn {
+    animation: statIn 0.3s ease forwards;
+  }
+
+  .statFadeOut {
+    animation: statOut 0.3s ease forwards;
+  }
+
+  @keyframes statIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes statOut {
+    from { opacity: 1; transform: translateY(0); }
+    to   { opacity: 0; transform: translateY(-8px); }
+  }
+
+  .statDots {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .statDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-subtle);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+
+  .statDotActive {
+    background: var(--color-accent);
+    transform: scale(1.4);
+  }
+}
+
+.heroBadge {
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.heroDescription {
+  max-width: 580px;
+  margin: 28px 0 40px;
+}

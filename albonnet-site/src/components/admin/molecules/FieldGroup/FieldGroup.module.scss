@@ -1,0 +1,23 @@
+.group {
+  margin-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 7px;
+}
+
+.label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--admin-text);
+  font-family: var(--font-body);
+}
+
+.hint {
+  font-size: 0.72rem;
+  color: var(--admin-text-dim);
+  font-family: var(--font-mono);
+}

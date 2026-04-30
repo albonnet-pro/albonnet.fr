@@ -1,0 +1,69 @@
+/* ─── BackOffice Layout ──────────────────────────────────────── */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--admin-bg);
+  font-family: var(--font-body);
+}
+
+/* Overlay - hidden on desktop, shown on mobile when sidebar open */
+.overlay {
+  display: none;
+
+  @media (max-width: 767px) {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 199;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+
+    &[data-open="true"] {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}
+
+/* Main area */
+.mainArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.main {
+  flex: 1;
+  padding: 20px 16px;
+  max-width: 900px;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    padding: 32px clamp(24px, 4vw, 48px);
+  }
+}
+
+/* Loading state */
+.loadingState {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--admin-bg);
+  font-family: var(--font-body);
+  color: var(--admin-text-muted);
+  gap: 16px;
+}
+
+.loadingIcon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: var(--admin-radius-sm);
+}

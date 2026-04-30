@@ -1,0 +1,117 @@
+/* ─── AdminSidebar ──────────────────────────────────────── */
+
+.sidebar {
+  width: 260px;
+  background: var(--admin-surface);
+  border-right: 1px solid var(--admin-border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  overflow-y: auto;
+  z-index: 1;
+  align-self: flex-start;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+  @media (max-width: 767px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 200;
+    transform: translateX(-100%);
+
+    &[data-open="true"] {
+      transform: translateX(0);
+    }
+  }
+}
+
+.sidebarHeader {
+  padding: 24px 20px 20px;
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.sidebarBrand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.brandIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--admin-radius-sm);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--admin-text);
+}
+
+.brandAccent {
+  color: var(--admin-accent);
+}
+
+.sidebarSubtitle {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  color: var(--admin-text-dim);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.sidebarNav {
+  padding: 12px 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebarFooter {
+  padding: 16px 20px;
+  border-top: 1px solid var(--admin-border);
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--admin-accent), #ff8a65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-body);
+  flex-shrink: 0;
+}
+
+.userName {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--admin-text);
+  font-family: var(--font-body);
+}
+
+.userRole {
+  font-size: 0.7rem;
+  color: var(--admin-text-dim);
+  font-family: var(--font-mono);
+}

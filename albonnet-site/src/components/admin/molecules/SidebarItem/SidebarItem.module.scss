@@ -1,0 +1,32 @@
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--admin-radius-sm);
+  background: transparent;
+  color: var(--admin-text-muted);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-align: left;
+  border-left: 3px solid transparent;
+
+  &:hover:not([data-active="true"]) {
+    background: var(--admin-surface-hover);
+  }
+
+  &[data-active="true"] {
+    background: var(--admin-accent-soft);
+    color: var(--admin-accent);
+    border-left-color: var(--admin-accent);
+  }
+}
+
+.label {
+  flex: 1;
+}

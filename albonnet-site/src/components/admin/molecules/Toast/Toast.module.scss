@@ -1,0 +1,30 @@
+.toast {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  padding: 14px 24px;
+  border-radius: var(--admin-radius);
+  background: var(--admin-surface);
+  border: 1px solid transparent;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &[data-visible="true"] {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &[data-visible="false"] {
+    transform: translateY(120%);
+    opacity: 0;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,67 @@
+/* ─── Design Tokens (CSS Custom Properties) ──────────────── */
+:root {
+  /* Admin (back-office) tokens */
+  --admin-bg: #101014;
+  --admin-surface: #1a1a20;
+  --admin-surface-hover: #22222a;
+  --admin-border: #2a2a34;
+  --admin-border-light: #35354a;
+  --admin-text: #e8e6e3;
+  --admin-text-muted: #8b8998;
+  --admin-text-dim: #5c5a6a;
+  --admin-accent: #e8503a;
+  --admin-accent-soft: rgba(232, 80, 58, 0.12);
+  --admin-accent-glow: rgba(232, 80, 58, 0.25);
+  --admin-success: #34d399;
+  --admin-success-soft: rgba(52, 211, 153, 0.12);
+  --admin-warning: #fbbf24;
+  --admin-danger: #f87171;
+  --admin-danger-soft: rgba(248, 113, 113, 0.1);
+  --admin-radius: 10px;
+  --admin-radius-sm: 6px;
+  --admin-radius-lg: 16px;
+  /* Colors */
+  --color-ink: #0a0a0a;
+  --color-paper: #f5f0eb;
+  --color-accent: #e8503a;
+  --color-accent-dark: #c93d2a;
+  --color-muted: #8a8579;
+  --color-subtle: #d9d3cb;
+  --color-glass: rgba(245, 240, 235, 0.85);
+  --color-dark: #1a1816;
+  --color-dark-glass: rgba(26, 24, 22, 0.95);
+
+  /* Fonts */
+  --font-display: 'Clash Display', 'Satoshi', sans-serif;
+  --font-body: 'General Sans', 'Switzer', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-main: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-slow: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+body { overflow-x: hidden; }
+::selection { background: #e8503a30; color: #0a0a0a; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f5f0eb; }
+::-webkit-scrollbar-thumb { background: #d9d3cb; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #8a8579; }
+input::placeholder, textarea::placeholder { color: #8a857980; }
+
+/* Navbar responsive */
+.nav-desktop { display: inline-flex; }
+.nav-mobile { display: none; }
+
+@media (max-width: 768px) {
+  .nav-desktop { display: none !important; }
+  .nav-mobile { display: flex !important; }
+}
