@@ -16,7 +16,7 @@ export default function Navbar({ settings }: { settings: SiteSettings }) {
   const links = [
     { href: "#services", label: "Services" },
     { href: "#projets", label: "Projets" },
-    { href: "#expertise", label: "Expertise" },
+    { href: "#expertise", label: "Compétences" },
     { href: "#contact", label: "Contact" },
   ];
 
