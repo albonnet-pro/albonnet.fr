@@ -69,19 +69,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Erreur lors de l'envoi" }, { status: 500 });
     }
 
-    await fetch(`${process.env.NTFY_URL}/${process.env.NTFY_TOPIC}`, {
-      method: "POST",
-      headers: {
-        "Title": "Albonnet.fr - Nouveau message",
-        "Priority": "high",
-        "Tags": "envelope",
-        ...(process.env.NTFY_TOKEN && {
-          "Authorization": `Bearer ${process.env.NTFY_TOKEN}`,
-        }),
-        "Content-Type": "text/plain",
-      },
-      body: `De : ${name} (${email})\n\nConsultez vos mails afin de lire le contenu du message.`,
-    });
+    // await fetch(`${process.env.NTFY_URL}/${process.env.NTFY_TOPIC}`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Title": "Albonnet.fr - Nouveau message",
+    //     "Priority": "high",
+    //     "Tags": "envelope",
+    //     ...(process.env.NTFY_TOKEN && {
+    //       "Authorization": `Bearer ${process.env.NTFY_TOKEN}`,
+    //     }),
+    //     "Content-Type": "text/plain",
+    //   },
+    //   body: `De : ${name} (${email})\n\nConsultez vos mails afin de lire le contenu du message.`,
+    // });
 
     return NextResponse.json({ success: true, remaining });
   } catch (err) {
