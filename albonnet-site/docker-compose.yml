@@ -7,8 +7,8 @@ services:
       POSTGRES_USER: albonnet
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: albonnet
-    ports:
-      - "5432:5432"
+    #ports:
+    #  - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -28,8 +28,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
-    ports:
-      - "3000:3000"
+    #ports:
+    #  - "3000:3000"
     environment:
       DATABASE_URL: ${DATABASE_URL}
       NEXTAUTH_SECRET: ${NEXTAUTH_SECRET}
