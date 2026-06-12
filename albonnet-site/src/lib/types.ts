@@ -37,6 +37,7 @@ export interface ProjectData {
   imageUrl: string;
   url: string;
   tags: string[];
+  published?: boolean;
 }
 
 export interface ExpertiseData {

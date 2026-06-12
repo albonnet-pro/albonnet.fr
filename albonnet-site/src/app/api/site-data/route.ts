@@ -106,7 +106,7 @@ export async function PUT(req: NextRequest) {
       case "projects":
         await prisma.project.deleteMany();
         await prisma.project.createMany({
-          data: (parsed.data as { title: string; description: string; color?: string; imageUrl?: string; url?: string; tags?: string[] }[])
+          data: (parsed.data as { title: string; description: string; color?: string; imageUrl?: string; url?: string; tags?: string[]; published?: boolean }[])
             .map((p, i) => ({
               title: p.title,
               description: p.description,
@@ -114,6 +114,7 @@ export async function PUT(req: NextRequest) {
               imageUrl: p.imageUrl ?? "",
               url: p.url ?? "",
               tags: p.tags ?? [],
+              published: p.published ?? true,
               position: i,
             })),
         });

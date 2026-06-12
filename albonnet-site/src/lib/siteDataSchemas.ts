@@ -38,9 +38,10 @@ const projectSchema = z.object({
   imageUrl:    z.string().max(500).optional(),
   url:         z.string().url().max(500).or(z.literal("")).optional(),
   tags:        z.array(z.string().max(30)).max(10).optional(),
+  published:   z.boolean().optional(),
 });
 
-export const projectsSchema = z.array(projectSchema).max(20);
+export const projectsSchema = z.array(projectSchema).max(50);
 
 const expertiseGroupSchema = z.object({
   label:       z.string().min(1).max(80),
