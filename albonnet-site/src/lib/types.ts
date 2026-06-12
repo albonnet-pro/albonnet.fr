@@ -38,6 +38,8 @@ export interface ProjectData {
   url: string;
   tags: string[];
   published?: boolean;
+  wip?: boolean;
+  school?: boolean;
 }
 
 export interface ExpertiseData {

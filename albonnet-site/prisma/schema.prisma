@@ -68,6 +68,8 @@ model Project {
   url         String   @default("")
   tags        String[] @default([])
   published   Boolean  @default(true)
+  wip         Boolean  @default(false)
+  school      Boolean  @default(false)
   position    Int      @default(0)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt

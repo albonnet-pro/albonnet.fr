@@ -39,6 +39,8 @@ const projectSchema = z.object({
   url:         z.string().url().max(500).or(z.literal("")).optional(),
   tags:        z.array(z.string().max(30)).max(10).optional(),
   published:   z.boolean().optional(),
+  wip:         z.boolean().optional(),
+  school:      z.boolean().optional(),
 });
 
 export const projectsSchema = z.array(projectSchema).max(50);
