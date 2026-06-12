@@ -4,3 +4,4 @@ export { default as CardEditor } from "./CardEditor";
 export { default as TagInput } from "./TagInput";
 export { default as Toast } from "./Toast";
 export { default as ImageUpload } from "./ImageUpload";
+export { default as ProjectListItem } from "./ProjectListItem";
