@@ -1,3 +1,133 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 2fr) 3fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.listPane {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.searchRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.searchField {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  color: var(--admin-text-dim);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px;
+  border: 1px dashed var(--admin-border);
+  border-radius: var(--admin-radius-sm);
+  color: var(--admin-text-muted);
+  font-size: 0.82rem;
+  font-family: var(--font-body);
+  text-align: center;
+}
+
+.hint {
+  font-size: 0.7rem;
+  color: var(--admin-text-dim);
+  font-family: var(--font-body);
+  text-align: center;
+  margin-top: 4px;
+}
+
+.detailPane {
+  border: 1px solid var(--admin-border);
+  border-radius: var(--admin-radius);
+  background: var(--admin-surface);
+  padding: 20px;
+}
+
+.detailPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: var(--admin-text-dim);
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+}
+
+.detailHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.detailActions {
+  display: flex;
+  gap: 8px;
+}
+
+.backBtn {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: none;
+  padding: 0 0 14px 0;
+  color: var(--admin-text-muted);
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--admin-text);
+  }
+}
+
+@media (max-width: 767px) {
+  .layout {
+    grid-template-columns: 1fr;
+
+    &[data-detail-open="false"] .detailPane {
+      display: none;
+    }
+
+    &[data-detail-open="true"] .listPane {
+      display: none;
+    }
+  }
+
+  .backBtn {
+    display: flex;
+  }
+}
+
 .preview {
   height: 120px;
   border-radius: var(--admin-radius-sm);
