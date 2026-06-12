@@ -43,6 +43,8 @@ export default function ProjectsSection({ projects }: { projects: ProjectData[] 
                 url={p.url}
                 index={i}
                 visible={visible}
+                wip={p.wip}
+                school={p.school}
               />
             );
           })}

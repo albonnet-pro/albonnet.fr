@@ -7,7 +7,7 @@ import Heading from "@/components/atoms/Heading";
 import Text from "@/components/atoms/Text";
 import Badge from "@/components/site/atoms/Badge";
 
-export default function ProjectCard({ title, tags, description, image, url, index, visible }: {
+export default function ProjectCard({ title, tags, description, image, url, index, visible, wip, school }: {
   title: string;
   tags: string[];
   description: string;
@@ -15,6 +15,8 @@ export default function ProjectCard({ title, tags, description, image, url, inde
   url?: string;
   index: number;
   visible: boolean;
+  wip?: boolean;
+  school?: boolean;
 }) {
   const isImageUrl = image && (image.startsWith("http") || image.startsWith("/"));
   const visualStyle: CSSProperties = isImageUrl
@@ -32,6 +34,12 @@ export default function ProjectCard({ title, tags, description, image, url, inde
           onClick={(e) => { if (!url) e.preventDefault(); }}
         >
           <div className={styles.visualBg} style={visualStyle} />
+          {(wip || school) && (
+            <div className={styles.flags}>
+              {wip && <span className={`${styles.flag} ${styles.flagWip}`}>En cours</span>}
+              {school && <span className={`${styles.flag} ${styles.flagSchool}`}>Projet d&apos;école</span>}
+            </div>
+          )}
           {url && (
             <div className={styles.overlay}>
               <span className={styles.visitBtn}>

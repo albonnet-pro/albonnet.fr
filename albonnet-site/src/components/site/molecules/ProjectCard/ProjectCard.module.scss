@@ -75,3 +75,29 @@
   flex-wrap: wrap;
   margin-bottom: 14px;
 }
+
+.flags {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.flag {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.flagWip {
+  background: var(--color-accent);
+}
+
+.flagSchool {
+  background: rgba(20, 20, 28, 0.85);
+}
