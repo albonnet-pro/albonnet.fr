@@ -4,3 +4,4 @@ export { default as AdminButton } from "./AdminButton";
 export { default as AdminBadge } from "./AdminBadge";
 export { default as AdminIcon } from "./AdminIcon";
 export { default as Separator } from "./Separator";
+export { default as AdminCheckbox } from "./AdminCheckbox";
