@@ -80,6 +80,8 @@ export default function ProjectsEditor({ data, onChange }: { data: ProjectData[]
     const nextSel = nextKeys[i] ?? nextKeys[i - 1] ?? null;
     setSelectedKey(nextSel);
     if (!nextSel) setDetailOpen(false);
+    // la sélection suivante peut ne pas matcher le filtre actif : on le réinitialise
+    setQuery("");
     onChange(data.filter((_, idx) => idx !== i));
   };
 
@@ -130,7 +132,7 @@ export default function ProjectsEditor({ data, onChange }: { data: ProjectData[]
           <div className={styles.emptyState}>Aucun projet ne correspond à « {query.trim()} ».</div>
         ) : (
           <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-            <SortableContext items={visible.map((v) => v.key)} strategy={verticalListSortingStrategy}>
+            <SortableContext items={keys} strategy={verticalListSortingStrategy}>
               <div className={styles.list}>
                 {visible.map(({ p, key }) => (
                   <ProjectListItem
