@@ -11,6 +11,10 @@ const PATHS: Record<string, string> = {
   check: "M20 6L9 17l-5-5",
   eye: "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z M12 9a3 3 0 100 6 3 3 0 000-6z",
   logout: "M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9",
+  search: "M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z",
+  grip: "M9 6h.01M9 12h.01M9 18h.01M15 6h.01M15 12h.01M15 18h.01",
+  "eye-off": "M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24M1 1l22 22",
+  "arrow-left": "M19 12H5M12 19l-7-7 7-7",
 };
 
 export default function AdminIcon({ name, size = 18 }: { name: string; size?: number }) {
