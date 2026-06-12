@@ -13,15 +13,22 @@ import {
 } from "@/lib/siteDataSchemas";
 
 // GET - Public : retourne toutes les données du site
+// (les projets masqués ne sont renvoyés qu'aux admins connectés)
 export async function GET() {
   try {
+    const session = await getServerSession(authOptions);
+    const isAdmin = session?.user?.role === "admin";
+
     const [settings, hero, stats, services, projects, expertise] =
       await Promise.all([
         prisma.siteSettings.findUnique({ where: { id: "main" } }),
         prisma.heroContent.findUnique({ where: { id: "main" } }),
         prisma.heroStat.findMany({ orderBy: { position: "asc" } }),
         prisma.service.findMany({ orderBy: { position: "asc" } }),
-        prisma.project.findMany({ orderBy: { position: "asc" } }),
+        prisma.project.findMany({
+          where: isAdmin ? {} : { published: true },
+          orderBy: { position: "asc" },
+        }),
         prisma.expertiseGroup.findMany({ orderBy: { position: "asc" } }),
       ]);
 

@@ -11,7 +11,7 @@ async function getSiteData() {
         prisma.heroContent.findUnique({ where: { id: "main" } }),
         prisma.heroStat.findMany({ orderBy: { position: "asc" } }),
         prisma.service.findMany({ orderBy: { position: "asc" } }),
-        prisma.project.findMany({ orderBy: { position: "asc" } }),
+        prisma.project.findMany({ where: { published: true }, orderBy: { position: "asc" } }),
         prisma.expertiseGroup.findMany({ orderBy: { position: "asc" } }),
       ]);
     if (!settings || !hero) return null;
