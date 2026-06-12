@@ -198,3 +198,10 @@
   border: 1px solid var(--admin-border);
   flex-shrink: 0;
 }
+
+.flagsRow {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 4px 0;
+}

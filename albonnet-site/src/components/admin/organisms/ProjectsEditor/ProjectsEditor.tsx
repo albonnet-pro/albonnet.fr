@@ -16,6 +16,7 @@ import AdminTextArea from "@/components/admin/atoms/AdminTextArea";
 import AdminButton from "@/components/admin/atoms/AdminButton";
 import AdminIcon from "@/components/admin/atoms/AdminIcon";
 import AdminBadge from "@/components/admin/atoms/AdminBadge";
+import AdminCheckbox from "@/components/admin/atoms/AdminCheckbox";
 import Separator from "@/components/admin/atoms/Separator";
 import FieldGroup from "@/components/admin/molecules/FieldGroup";
 import TagInput from "@/components/admin/molecules/TagInput";
@@ -206,6 +207,20 @@ export default function ProjectsEditor({ data, onChange }: { data: ProjectData[]
             </FieldGroup>
             <FieldGroup label="Tags / Technologies">
               <TagInput tags={selected.tags || []} onChange={(tags) => update(selectedIndex, "tags", tags)} />
+            </FieldGroup>
+            <FieldGroup label="Étiquettes" hint="Affichées en haut du visuel côté visiteur">
+              <div className={styles.flagsRow}>
+                <AdminCheckbox
+                  label="En cours (WIP)"
+                  checked={selected.wip ?? false}
+                  onChange={(v) => update(selectedIndex, "wip", v)}
+                />
+                <AdminCheckbox
+                  label="Projet d'école"
+                  checked={selected.school ?? false}
+                  onChange={(v) => update(selectedIndex, "school", v)}
+                />
+              </div>
             </FieldGroup>
             <Separator />
             <div className={styles.visual}>
